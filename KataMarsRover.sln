@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "KataMarsRover", "KataMarsRover\KataMarsRover.fsproj", "{7D52CB32-9EF9-46F5-A0F1-A5B8B54F0C19}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "KataMarsRover.Tests", "KataMarsRover.Tests\KataMarsRover.Tests.fsproj", "{20584B7B-6DEA-4FBA-B580-65FF90740CB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D52CB32-9EF9-46F5-A0F1-A5B8B54F0C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D52CB32-9EF9-46F5-A0F1-A5B8B54F0C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D52CB32-9EF9-46F5-A0F1-A5B8B54F0C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D52CB32-9EF9-46F5-A0F1-A5B8B54F0C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20584B7B-6DEA-4FBA-B580-65FF90740CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20584B7B-6DEA-4FBA-B580-65FF90740CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20584B7B-6DEA-4FBA-B580-65FF90740CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20584B7B-6DEA-4FBA-B580-65FF90740CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B59716C8-8562-4822-83DD-96F681D8913A}
+	EndGlobalSection
+EndGlobal
