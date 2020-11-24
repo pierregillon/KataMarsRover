@@ -12,22 +12,46 @@ let ``Point to north by default`` () =
 [<Fact>]
 let ``Is 0,0 by default`` () =
     let position = Rover().Position;
-    Assert.Equal(position.X, 0)
-    Assert.Equal(position.Y, 0)
+    Assert.Equal(0, position.X)
+    Assert.Equal(0, position.Y)
 
 [<Fact>]
 let ``Rotating right do not change position`` () =
     let rover = Rover() |> executeCommand "R"
-        
-    Assert.Equal(rover.Position.X, 0)
-    Assert.Equal(rover.Position.Y, 0)
+    Assert.Equal(0, rover.Position.X)
+    Assert.Equal(0, rover.Position.Y)
+
+[<Fact>]
+let ``Rotating right when facing north do change direction to east`` () =
+    let rover = Rover() |> executeCommand "R"
+    Assert.Equal(Direction.East, rover.Direction)
+    
+[<Fact>]
+let ``Rotating left when facing north do change direction to west`` () =
+    let rover = Rover() |> executeCommand "L"
+    Assert.Equal(Direction.West, rover.Direction)
+    
+[<Fact>]
+let ``Rotating right when facing east do change direction to south`` () =
+    let rover = Rover({X= 0; Y=0}, Direction.East) |> executeCommand "R" 
+    Assert.Equal(Direction.South, rover.Direction)
+
+[<Fact>]
+let ``Rotating right when facing west do change direction to south`` () =
+    let rover = Rover({X= 0; Y=0}, Direction.West) |> executeCommand "R" 
+    Assert.Equal(Direction.North, rover.Direction)
+
+[<Fact>]
+let ``7 rotations right when facing west do change direction to south`` () =
+    let rover = Rover({X= 0; Y=0}, Direction.West) |> executeCommand "RRRRRRR" 
+    Assert.Equal(Direction.South, rover.Direction)
 
 [<Fact>]
 let ``Move forward update position`` () =
     let rover = Rover() |> executeCommand "F"
-
     Assert.Equal(rover.Position.X, 0)
     Assert.Equal(rover.Position.Y, 1)
+
 
 
 
