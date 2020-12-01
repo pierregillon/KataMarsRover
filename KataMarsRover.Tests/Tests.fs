@@ -47,6 +47,21 @@ let ``7 rotations right when facing west do change direction to south`` () =
     Assert.Equal(Direction.South, rover.Direction)
 
 [<Fact>]
+let ``2 rotations right and 2 rotations left when facing south do not change direction`` () =
+    let rover = Rover({X= 0; Y=0}, Direction.South) |> executeCommand "RRLL" 
+    Assert.Equal(Direction.South, rover.Direction)
+
+[<Fact>]
+let ``Move forward twice and backward twice stay at the same position`` () =
+    let rover = Rover({X= 1; Y=1}, Direction.South) |> executeCommand "FFBB" 
+    Assert.Equal({X= 1; Y=1}, rover.Position)
+
+[<Fact>]
+let ``Turn left and move forward twice when facing North`` () =
+    let rover = Rover({X=1; Y=1}, Direction.North) |> executeCommand "LFF" 
+    Assert.Equal({X=(-1); Y=1}, rover.Position)
+
+[<Fact>]
 let ``Move forward update position`` () =
     let rover = Rover() |> executeCommand "F"
     Assert.Equal(rover.Position.X, 0)
